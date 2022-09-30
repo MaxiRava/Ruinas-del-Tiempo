@@ -172,7 +172,7 @@ export class Escenario1 extends Phaser.Scene {
     
       player.anims.play("jump");
       
-
+      //JUMP
       setTimeout(() => {
         //texto.destroy();
         
@@ -186,12 +186,11 @@ export class Escenario1 extends Phaser.Scene {
         texto.setText(`Vidas: ${number}`);
       }, 900); 
     }
-
+      // Runner
     hitSnake(player,snake) {
       snake.destroy();
       count = count + 1;
       
-      //let texto = this.add.text(player.x, player.y - 150, "Vidas: "+ (number - count), { stroke: 'black', strokeThickness: 5, fontSize: '54px Arial', fill: 'white' })
       this.physics.pause();
   
       player.setTint(0xff0000);
@@ -256,7 +255,7 @@ export class Escenario1 extends Phaser.Scene {
         isJumping = false;
       }
     }
-
+    
     if (count === 3){
     
       setTimeout(() => {
