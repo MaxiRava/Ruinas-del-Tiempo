@@ -16,6 +16,10 @@ let audio3;
 let audio2;
 var texto;
 
+import { EN_US } from "../enums/languages";
+import { ES_AR } from "../enums/languages";
+import { getTranslations} from "../services/translations";
+import { getPhrase } from "../services/translations";
 
 export class Escenario1 extends Phaser.Scene {
     constructor() {

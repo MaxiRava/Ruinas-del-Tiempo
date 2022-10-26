@@ -8,6 +8,11 @@ let final;
 let turno;
 let audio2;
 
+import { EN_US } from "../enums/languages";
+import { ES_AR } from "../enums/languages";
+import { getTranslations} from "../services/translations";
+import { getPhrase } from "../services/translations";
+
 export class Tablero extends Phaser.Scene {
     constructor() {
       super("Tablero");

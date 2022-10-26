@@ -6,6 +6,7 @@ export class Preloads extends Phaser.Scene {
   }
 
   preload() {
+    this.#language
 
     this.load.image("cueva", "public/assets/images/cueva1.png");
     this.load.image("cueva2", "public/assets/images/cueva22.png");
@@ -94,5 +95,9 @@ export class Preloads extends Phaser.Scene {
       frames: [{ key: "dude2", frame: 3 }],
       frameRate: 20,
     });
+  }
+
+  async getTranslation(){
+
   }
 }

@@ -1,6 +1,6 @@
 import { ES_AR } from "../enums/languages";
 
-const PROJECT_ID = 'ckv8mzt5x00711oxk3br1key4';
+const PROJECT_ID = '38';
 let translations = null;
 let language = ES_AR;
 
@@ -22,6 +22,9 @@ export async function getTranslations(lang = language) {
     .then(data => {
         console.log(`FETCH TRANSLATIONS --- ${JSON.stringify(data)}`);
         localStorage.setItem('translations', adaptTranslations(data));
+        translations = data;
+
+    if(callback) callback();
     });
 }
 
@@ -36,5 +39,5 @@ export function getPhrase(key) {
         phrase = translations[key];
     }
 
-    return phrase;
+    return ES_AR;
 }
