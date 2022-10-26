@@ -13,6 +13,19 @@ export class MainMenu extends Phaser.Scene {
 
   create() {
  
+    /*
+      const buttonEnglish = this.add.rectangle(width * 0.5, height * 0.15, 150, 75, 0xffffff)
+			.setInteractive()
+			.on(Phaser.Input.Events.GAMEOBJECT_POINTER_UP, () => {
+				this.getTranslations(EN_US)
+			})
+
+		this.textEnglish = this.add.text(buttonEnglish.x, buttonEnglish.y, 'Inglés', {
+			color: '#000000'
+		})
+		.setOrigin(0.5)
+    */
+
   let Jugar;
   
   this.add.image(this.cameras.main.centerX,this.cameras.main.centerY,"cueva");
@@ -86,12 +99,25 @@ export class MainMenu extends Phaser.Scene {
         //sonido.setScale(1)
       })
       
+      
+
+      
   }
   update(){
-    
-    
+    /*
+     // console.log(this.updatedTextInScene)
+     if(this.wasChangedLanguage === FETCHED){
+      this.wasChangedLanguage = READY;
+      this.updatedTextInScene.setText(getPhrase(this.updatedString));
+    }*/
   }
+
+  async getTranslations(language){
+    this.wasChangedLanguage = FETCHING
+    await getTranslations(language)
+    this.wasChangedLanguage = FETCHED
+    // si solo se tiene un menu para elegir las opciones de idiomas conviene cargar aca la misma
+    // this.scene.start('play')
 }
 
-  
-
+}

@@ -8,6 +8,8 @@ import { Escenario1 } from "../scenes/escenario1.js";
 import { Escenario2 } from "../scenes/escenario2.js";
 
 
+//localStorage.clear();
+
 
 const config = {
   type: Phaser.AUTO,
